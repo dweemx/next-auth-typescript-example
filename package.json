@@ -25,6 +25,9 @@
   "prettier": {
     "semi": false
   },
+  "prisma": {
+    "schema": "db/next-auth.prisma"
+  },
   "dependencies": {
     "@next-auth/prisma-adapter": "^0.5.2-next.5",
     "@prisma/client": "^3.0.2",
