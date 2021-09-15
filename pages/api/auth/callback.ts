@@ -1,6 +1,5 @@
 import { NextApiResponse } from "next";
-
-import * as nextAuthServerRoutes from "next-auth/server/routes"
+import NextAuth from "next-auth"
 
 /**
  * Fixes: https://github.com/nextauthjs/next-auth/issues/1840
@@ -14,5 +13,5 @@ export default (req: any, res: NextApiResponse): NextApiResponse => {
     if(provider.type === "email" && req.method === "HEAD") {
         return res.redirect(baseUrl)
     }
-    return nextAuthServerRoutes.callback(req, res)
+    return NextAuth(req, res, req.options)
 }
